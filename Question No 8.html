@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question No 8</title>
+</head>
+<body>
+    <!-- Write a function that takes an object and saves each property to
+    localStorage using the property name as the key and the property value as
+    the value. The function should also retrieve the object from localStorage
+    and return it as a new object -->
+</body>
+<script>
+
+function saveToLocalStorage(obj) {
+  // Save each property to localStorage
+  for (let prop in obj) {
+    localStorage.setItem(prop, JSON.stringify(obj[prop]));
+  }
+
+  // Retrieve the object from localStorage
+  let newobj = JSON.parse(localStorage.getItem('obj')) || {};
+
+  // Log the new object
+  console.log(newobj);
+}
+
+// Call the function with an example object
+const myObj = { prop1: 'value1', prop2: 2 };
+saveToLocalStorage(myObj);
+</script>
+</html>
